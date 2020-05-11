@@ -18,6 +18,7 @@ class Usuarios extends Migration
             $table->string('name');
             $table->integer('cpf');
             $table->integer('phone');
+            $table->float('phone');
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();

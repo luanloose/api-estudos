@@ -19,7 +19,6 @@ class SellerTable extends Migration
             $table->string('username')->unique();
             $table->string('razao_social');
             $table->string('nome_fantasia');
-            $table->integer('money');
             $table->integer('cnpj');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
