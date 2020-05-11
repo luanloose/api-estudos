@@ -33,7 +33,32 @@ class PaymentController extends Controller
         try {
             $data = $request->all();
             $amount = floatval($data['amount']);
-            $payer = $this->user->find($data['payer']);
+
+            $payer = $this->user->with(['consumer', 'seller'])
+                ->join('consumer', 'users.id', '=', 'consumer.user_id')
+                ->join('seller', 'users.id', '=', 'seller.user_id')
+                ->where('consumer.username', '=', $data['payer'])
+                ->orWhere('seller.username', '=', $data['payer'])->get();
+
+            $receiver = $this->user->with(['consumer', 'seller'])
+                ->join('consumer', 'users.id', '=', 'consumer.user_id')
+                ->join('seller', 'users.id', '=', 'seller.user_id')
+                ->where('consumer.username', '=', $data['receiver'])
+                ->orWhere('seller.username', '=', $data['receiver'])->get();
+
+            if ($payer == null) {
+                return response()->json(
+                    Msg::getError("Pagador nao encontrado"),
+                    404
+                );
+            }
+
+            if ($receiver == null) {
+                return response()->json(
+                    Msg::getError("Recebedor nao encontrado"),
+                    404
+                );
+            }
 
             if (!$authorize = Authorization::wallet(floatval($payer->money), $amount)) {
 
@@ -51,8 +76,6 @@ class PaymentController extends Controller
                 );
             }
 
-            $receiver = $this->user->find($data['receiver']);
-
             $payer->update(['money' => floatval($payer->money) - $amount]);
 
             $receiver->update(['money' => floatval($receiver->money) + $amount]);
@@ -69,21 +92,33 @@ class PaymentController extends Controller
         }
     }
 
-    public function withdraw($user)
+    public function withdraw(Request $request)
     {
         try {
-            $user = $this->user->find($user);
+            $data = $request->all();
 
-            if ($user->money <= 0) {
+            $user = $this->user->with(['consumer', 'seller'])
+                ->join('consumer', 'users.id', '=', 'consumer.user_id')
+                ->join('seller', 'users.id', '=', 'seller.user_id')
+                ->where('consumer.username', '=', $data['user'])
+                ->orWhere('seller.username', '=', $data['user'])->get();
+
+            if ($user == null) {
+                return response()->json(
+                    Msg::getError("Usuário nao encontrado"),
+                    404
+                );
+            }
+
+            if ($user->money <= 0 || $user->money > floatval($data['amount'])) {
 
                 return response()->json(
-                    Msg::getError("Voce nao tem saldo para saque"),
+                    Msg::getError("Voce nao tem saldo suficiente para saque"),
                     401
                 );
             }
 
-            //mudar para quantia dps
-            $user->update(['money' => 0]);
+            $user->update(['money' => floatval($user->money) - floatval($data['amount'])]);
 
             return response()->json(
                 Msg::getSucess("Saque realizado com sucesso!"),
@@ -97,13 +132,23 @@ class PaymentController extends Controller
         }
     }
 
-    // mudar logica da rota para receber tudo no post
-    public function deposit($user, Request $request)
+    public function deposit(Request $request)
     {
         try {
             $data = $request->all();
 
-            $user = $this->user->find($user);
+            $user =  $user = $this->user->with(['consumer', 'seller'])
+                ->join('consumer', 'users.id', '=', 'consumer.user_id')
+                ->join('seller', 'users.id', '=', 'seller.user_id')
+                ->where('consumer.username', '=', $data['user'])
+                ->orWhere('seller.username', '=', $data['user'])->get();
+
+            if ($user == null) {
+                return response()->json(
+                    Msg::getError("Usuário nao encontrado"),
+                    404
+                );
+            }
 
             $user->update(['money' => floatval($user->money) + floatval($data['amount'])]);
 

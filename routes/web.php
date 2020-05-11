@@ -18,20 +18,13 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'usuarios'], function() use($router){
 
     $router->get('/', 'UserController@index');
-    $router->get('/{user}', 'UserController@show');
-
     $router->post('/','UserController@store');
+    $router->get('/{user}', 'UserController@show');
     $router->put('/{user}', 'UserController@update');
     $router->delete('/{user}', 'UserController@destroy');
 
 });
 
-$router->group(['prefix' => 'pay'], function() use($router){
-
-    $router->post('/', 'PaymentController@pay');
-
-    $router->get('/{user}', 'PaymentController@withdraw');
-    $router->post('/{user}','PaymentController@deposit');
-
-
-});
+$router->post('/pay', 'PaymentController@pay');
+$router->post('/deposit','PaymentController@deposit');
+$router->post('/withdraw', 'PaymentController@withdraw');
