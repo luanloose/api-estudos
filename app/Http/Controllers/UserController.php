@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use Illuminate\Support\Facades\DB;
-
+use App\Api\ApiMessages as Msg;
 
 class UserController extends Controller
 {
@@ -38,15 +37,25 @@ class UserController extends Controller
                 ->orWhere('consumer.username', 'like', "%{$user}%")
                 ->orWhere('seller.username', 'like', "%{$user}%")->get();
 
-            return response()->json([
-                'data' => $user
-            ], 200);
+
+            if ($user) {
+                return response()->json(
+                    ['Usuario' => $user],
+                    200
+                );
+            }
+
+            return response()->json(
+                Msg::getError("Usuário nao encontrado"),
+                404
+            );
         } catch (\Exception $e) {
-            $message = 'Erro';
-            return response()->json($e->getMessage(), 401);
+            return response()->json(
+                Msg::getError("Ocorreu um erro na busca, contate o administrador"),
+                500
+            );
         }
     }
-
 
     public function store(Request $request)
     {
@@ -64,14 +73,7 @@ class UserController extends Controller
 
         try {
 
-            $user = $this->user->create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'cpf' => $data['cpf'],
-                'phone' => $data['phone'],
-                'money' => $data['money'],
-                'password' => $data['password']
-            ]);
+            $user = $this->user->create($data['user']);
 
 
             if ($request->has('consumer')) {
@@ -83,14 +85,15 @@ class UserController extends Controller
                 $user->seller()->create($data['seller']);
             }
 
-            return response()->json([
-                'data' => [
-                    'msg' => 'Usuário cadastrado com sucesso!'
-                ]
-            ], 200);
+            return response()->json(
+                Msg::getSucess("Usuário cadastrado com sucesso!"),
+                200
+            );
         } catch (\Exception $e) {
-            $message = 'Erro';
-            return response()->json($e->getMessage(), 401);
+            return response()->json(
+                Msg::getError("Ocorreu um erro no cadastro, contate o administrador"),
+                500
+            );
         }
     }
 
@@ -101,14 +104,7 @@ class UserController extends Controller
         try {
 
             $user = $this->user->findOrFail($user);
-            $user->update([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'cpf' => $data['cpf'],
-                'phone' => $data['phone'],
-                'money' => $data['money'],
-                'password' => $data['password']
-            ]);
+            $user->update($data['user']);
 
             if ($request->has('seller')) {
 
@@ -127,17 +123,17 @@ class UserController extends Controller
                 }
             }
 
-            return response()->json([
-                'data' => [
-                    'msg' => 'Usuário atualizado com sucesso!'
-                ]
-            ], 200);
+            return response()->json(
+                Msg::getSucess("Usuário atualizado com sucesso!"),
+                200
+            );
         } catch (\Exception $e) {
-            $message = 'Erro no update';
-            return response()->json($e->getMessage(), 500);
+            return response()->json(
+                Msg::getError("Ocorreu um erro na atualização, contate o administrador"),
+                500
+            );
         }
     }
-
 
     public function destroy($user)
     {
@@ -145,11 +141,9 @@ class UserController extends Controller
 
         $user->delete();
 
-        return response()
-            ->json([
-                'data' => [
-                    'message' => 'Usuario foi removido com sucesso!'
-                ]
-            ]);
+        return response()->json(
+            Msg::getSucess("Usuario foi removido com sucesso!"),
+            200
+        );
     }
 }
