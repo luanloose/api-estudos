@@ -1,9 +1,6 @@
 <?php
 
-use App\User;
-use App\Http\Controllers\UserController;
-
-class PayTest extends TestCase
+class WithdrawTest extends TestCase
 {
     // public function testSacar()
     // {

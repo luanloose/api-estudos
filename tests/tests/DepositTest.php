@@ -1,8 +1,5 @@
 <?php
 
-use App\User;
-use App\Http\Controllers\UserController;
-
 class DepositTest extends TestCase
 {
     // public function testDeposito()
