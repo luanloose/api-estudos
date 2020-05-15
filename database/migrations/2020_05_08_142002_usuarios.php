@@ -13,12 +13,12 @@ class Usuarios extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('user', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->integer('cpf');
             $table->integer('phone');
-            $table->float('phone');
+            $table->float('money');
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();

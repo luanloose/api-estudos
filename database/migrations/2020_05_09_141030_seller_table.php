@@ -20,7 +20,7 @@ class SellerTable extends Migration
             $table->string('razao_social');
             $table->string('nome_fantasia');
             $table->integer('cnpj');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('user');
             $table->timestamps();
         });
     }

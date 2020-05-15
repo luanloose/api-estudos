@@ -17,7 +17,7 @@ class ConsumerTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('username')->unique();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('user');
             $table->timestamps();
         });
     }
