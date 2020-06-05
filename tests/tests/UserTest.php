@@ -1,8 +1,10 @@
 <?php
+use App\Http\Controllers\UserController;
+use App\User;
 
 class UserTest extends TestCase
 {
-    // public function testCriaUsuario()
+    // public function testCriaUsuarioJson()
     // {
         
     //     $this->post('/usuarios', [

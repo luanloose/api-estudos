@@ -11,7 +11,7 @@ class UserController extends Controller
     private $user;
 
     /**
-     * Create a new controller instance.
+     * Create a new user instance.
      *
      * @return void
      */
@@ -27,7 +27,6 @@ class UserController extends Controller
 
     public function show($user)
     {
-
         try {
 
             $user = $this->user->with(['consumer', 'seller'])
@@ -66,7 +65,6 @@ class UserController extends Controller
             'user.phone' => 'required',
             'user.money' => 'required',
             'user.password' => 'required'
-
         ]);
         
         $data = $request->all();

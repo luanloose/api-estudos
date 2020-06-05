@@ -94,6 +94,11 @@ class PaymentController extends Controller
 
     public function withdraw(Request $request)
     {
+        $this->validate($request, [
+            'user' => 'required',
+            'amount' => 'required'
+        ]);
+
         try {
             $data = $request->all();
 
@@ -134,6 +139,11 @@ class PaymentController extends Controller
 
     public function deposit(Request $request)
     {
+        $this->validate($request, [
+            'user' => 'required',
+            'amount' => 'required'
+        ]);
+        
         try {
             $data = $request->all();
 
