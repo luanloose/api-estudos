@@ -60,6 +60,7 @@ $app->singleton(
 */
 
 $app->configure('app');
+$app->configure('scribe');
 
 /*
 |--------------------------------------------------------------------------
@@ -76,9 +77,9 @@ $app->configure('app');
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+$app->routeMiddleware([
+    'transfer' => App\Http\Middleware\TransferRules::class,
+]);
 
 /*
 |--------------------------------------------------------------------------
@@ -94,6 +95,10 @@ $app->configure('app');
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+
+$app->register(App\Providers\ServicesServiceProvider::class);
+$app->register(App\Providers\RepositoriesServiceProvider::class);
+$app->register(\Knuckles\Scribe\ScribeServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

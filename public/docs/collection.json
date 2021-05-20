@@ -1,0 +1,611 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "localhost"
+        }
+    ],
+    "info": {
+        "name": "api-pagamentos",
+        "_postman_id": "92fa01c2-04ba-40b3-b933-61f4de3149fa",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "\/",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "\/",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/\/"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "\/ Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "\/",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/\/"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "null"
+                        }
+                    ]
+                },
+                {
+                    "name": "user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "user",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/user"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "user",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "user Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "user",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/user"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"current_page\": 1,\n    \"data\": [],\n    \"first_page_url\": \"http:\\\/\\\/localhost\\\/user?page=1\",\n    \"from\": null,\n    \"last_page\": 1,\n    \"last_page_url\": \"http:\\\/\\\/localhost\\\/user?page=1\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"pagination.previous\",\n            \"active\": false\n        },\n        {\n            \"url\": \"http:\\\/\\\/localhost\\\/user?page=1\",\n            \"label\": \"1\",\n            \"active\": true\n        },\n        {\n            \"url\": null,\n            \"label\": \"pagination.next\",\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"http:\\\/\\\/localhost\\\/user\",\n    \"per_page\": 15,\n    \"prev_page_url\": null,\n    \"to\": null,\n    \"total\": 0\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "user\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "user\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/user\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "soluta",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "user\/{id} Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "user\/:id",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/user\/:id",
+                                    "variable": [
+                                        {
+                                            "id": "id",
+                                            "key": "id",
+                                            "value": "soluta",
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"message\": \"Argument 1 passed to App\\\\Http\\\\Controllers\\\\UserController::show() must be of the type int, string given, called in \\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php on line 36\",\n    \"exception\": \"TypeError\",\n    \"file\": \"\\\/var\\\/www\\\/app\\\/Http\\\/Controllers\\\/UserController.php\",\n    \"line\": 77,\n    \"trace\": [\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"show\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\UserController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/Util.php\",\n            \"line\": 40,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 37,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/Container.php\",\n            \"line\": 614,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 386,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 352,\n            \"function\": \"callControllerCallable\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 326,\n            \"function\": \"callLumenController\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 279,\n            \"function\": \"callControllerAction\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 264,\n            \"function\": \"callActionOnArrayBasedRoute\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 234,\n            \"function\": \"handleFoundRoute\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 170,\n            \"function\": \"handleDispatcherResponse\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 426,\n            \"function\": \"Laravel\\\\Lumen\\\\Concerns\\\\{closure}\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 172,\n            \"function\": \"sendThroughPipeline\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 92,\n            \"function\": \"dispatch\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 333,\n            \"function\": \"handle\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 305,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 76,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 51,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 41,\n            \"function\": \"makeResponseCallIfEnabledAndNoSuccessResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 236,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 172,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 127,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 119,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 73,\n            \"function\": \"processRoutes\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/Util.php\",\n            \"line\": 40,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 37,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/Container.php\",\n            \"line\": 614,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/console\\\/Command.php\",\n            \"line\": 136,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/symfony\\\/console\\\/Command\\\/Command.php\",\n            \"line\": 256,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/console\\\/Command.php\",\n            \"line\": 121,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 971,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 290,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 166,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/console\\\/Application.php\",\n            \"line\": 92,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Console\\\/Kernel.php\",\n            \"line\": 116,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/artisan\",\n            \"line\": 35,\n            \"function\": \"handle\",\n            \"class\": \"Laravel\\\\Lumen\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "user\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "user\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/user\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "modi",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "user\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "user\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/user\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "aut",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "transfer",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "transfer",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/transfer"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "transfer",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "transfer",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/transfer"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "transfer Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "transfer",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/transfer"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"current_page\": 1,\n    \"data\": [],\n    \"first_page_url\": \"http:\\\/\\\/localhost\\\/transfer?page=1\",\n    \"from\": null,\n    \"last_page\": 1,\n    \"last_page_url\": \"http:\\\/\\\/localhost\\\/transfer?page=1\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"pagination.previous\",\n            \"active\": false\n        },\n        {\n            \"url\": \"http:\\\/\\\/localhost\\\/transfer?page=1\",\n            \"label\": \"1\",\n            \"active\": true\n        },\n        {\n            \"url\": null,\n            \"label\": \"pagination.next\",\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"http:\\\/\\\/localhost\\\/transfer\",\n    \"per_page\": 15,\n    \"prev_page_url\": null,\n    \"to\": null,\n    \"total\": 0\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "transfer\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "transfer\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/transfer\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "ut",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "transfer\/{id} Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "transfer\/:id",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/transfer\/:id",
+                                    "variable": [
+                                        {
+                                            "id": "id",
+                                            "key": "id",
+                                            "value": "ut",
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"message\": \"Argument 1 passed to App\\\\Http\\\\Controllers\\\\TransferController::show() must be of the type int, string given, called in \\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php on line 36\",\n    \"exception\": \"TypeError\",\n    \"file\": \"\\\/var\\\/www\\\/app\\\/Http\\\/Controllers\\\/TransferController.php\",\n    \"line\": 121,\n    \"trace\": [\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"show\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\TransferController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/Util.php\",\n            \"line\": 40,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 37,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/Container.php\",\n            \"line\": 614,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 386,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 352,\n            \"function\": \"callControllerCallable\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 326,\n            \"function\": \"callLumenController\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 279,\n            \"function\": \"callControllerAction\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 264,\n            \"function\": \"callActionOnArrayBasedRoute\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 234,\n            \"function\": \"handleFoundRoute\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 170,\n            \"function\": \"handleDispatcherResponse\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 426,\n            \"function\": \"Laravel\\\\Lumen\\\\Concerns\\\\{closure}\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 172,\n            \"function\": \"sendThroughPipeline\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 92,\n            \"function\": \"dispatch\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 333,\n            \"function\": \"handle\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 305,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 76,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 51,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 41,\n            \"function\": \"makeResponseCallIfEnabledAndNoSuccessResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 236,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 172,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 127,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 119,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 73,\n            \"function\": \"processRoutes\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/Util.php\",\n            \"line\": 40,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 37,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/Container.php\",\n            \"line\": 614,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/console\\\/Command.php\",\n            \"line\": 136,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/symfony\\\/console\\\/Command\\\/Command.php\",\n            \"line\": 256,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/console\\\/Command.php\",\n            \"line\": 121,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 971,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 290,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 166,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/console\\\/Application.php\",\n            \"line\": 92,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Console\\\/Kernel.php\",\n            \"line\": 116,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/artisan\",\n            \"line\": 35,\n            \"function\": \"handle\",\n            \"class\": \"Laravel\\\\Lumen\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "transfer\/refund\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "transfer\/refund\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/transfer\/refund\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "expedita",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "transfer\/refund\/{id} Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "transfer\/refund\/:id",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/transfer\/refund\/:id",
+                                    "variable": [
+                                        {
+                                            "id": "id",
+                                            "key": "id",
+                                            "value": "expedita",
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"message\": \"Argument 1 passed to App\\\\Http\\\\Controllers\\\\TransferController::refund() must be of the type int, string given, called in \\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php on line 36\",\n    \"exception\": \"TypeError\",\n    \"file\": \"\\\/var\\\/www\\\/app\\\/Http\\\/Controllers\\\/TransferController.php\",\n    \"line\": 133,\n    \"trace\": [\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"refund\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\TransferController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/Util.php\",\n            \"line\": 40,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 37,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/Container.php\",\n            \"line\": 614,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 386,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 352,\n            \"function\": \"callControllerCallable\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 326,\n            \"function\": \"callLumenController\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 279,\n            \"function\": \"callControllerAction\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 264,\n            \"function\": \"callActionOnArrayBasedRoute\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 234,\n            \"function\": \"handleFoundRoute\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 170,\n            \"function\": \"handleDispatcherResponse\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 426,\n            \"function\": \"Laravel\\\\Lumen\\\\Concerns\\\\{closure}\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 172,\n            \"function\": \"sendThroughPipeline\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Concerns\\\/RoutesRequests.php\",\n            \"line\": 92,\n            \"function\": \"dispatch\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 333,\n            \"function\": \"handle\",\n            \"class\": \"Laravel\\\\Lumen\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 305,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 76,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 51,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 41,\n            \"function\": \"makeResponseCallIfEnabledAndNoSuccessResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 236,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 172,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 127,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 119,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 73,\n            \"function\": \"processRoutes\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/Util.php\",\n            \"line\": 40,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/BoundMethod.php\",\n            \"line\": 37,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/container\\\/Container.php\",\n            \"line\": 614,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/console\\\/Command.php\",\n            \"line\": 136,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/symfony\\\/console\\\/Command\\\/Command.php\",\n            \"line\": 256,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/console\\\/Command.php\",\n            \"line\": 121,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 971,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 290,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 166,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/illuminate\\\/console\\\/Application.php\",\n            \"line\": 92,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/vendor\\\/laravel\\\/lumen-framework\\\/src\\\/Console\\\/Kernel.php\",\n            \"line\": 116,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/var\\\/www\\\/artisan\",\n            \"line\": 35,\n            \"function\": \"handle\",\n            \"class\": \"Laravel\\\\Lumen\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "transfer\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "transfer\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/transfer\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "sed",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

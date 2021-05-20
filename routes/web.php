@@ -1,5 +1,7 @@
 <?php
 
+/** @var \Laravel\Lumen\Routing\Router $router */
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,19 +14,50 @@
 */
 
 $router->get('/', function () use ($router) {
-    return 'Primeira API REST com Lumen... ' . $router->app->version();
+    return $router->app->version();
 });
 
-$router->group(['prefix' => 'usuarios'], function() use($router){
 
-    $router->get('/', 'UserController@index');
-    $router->post('/','UserController@store');
-    $router->get('/{user}', 'UserController@show');
-    $router->put('/{user}', 'UserController@update');
-    $router->delete('/{user}', 'UserController@destroy');
+$user_routes = "user.";
+$transfer_routes = "transfer.";
 
-});
+$router->post('/user', [
+    'as' => $user_routes.'store', 'uses' => 'UserController@store'
+]);
 
-$router->post('/pay', 'PaymentController@pay');
-$router->post('/deposit','PaymentController@deposit');
-$router->post('/withdraw', 'PaymentController@withdraw');
+$router->get('/user', [
+    'as' => $user_routes.'index', 'uses' => 'UserController@index'
+]);
+
+$router->get('/user/{id}', [
+    'as' => $user_routes.'show', 'uses' => 'UserController@show'
+]);
+
+$router->put('/user/{id}', [
+    'as' => $user_routes.'update', 'uses' => 'UserController@update'
+]);
+
+$router->delete('/user/{id}', [
+    'as' => $user_routes.'destroy', 'uses' => 'UserController@destroy'
+]);
+
+$router->post('/transfer', [
+    'middleware' => 'transfer',
+    'as' => $transfer_routes.'transfer', 'uses' => 'TransferController@transfer'
+]);
+
+$router->get('/transfer', [
+    'as' => $transfer_routes.'index', 'uses' => 'TransferController@index'
+]);
+
+$router->get('/transfer/{id}', [
+    'as' => $transfer_routes.'show', 'uses' => 'TransferController@show'
+]);
+
+$router->get('/transfer/refund/{id}', [
+    'as' => $transfer_routes.'refund', 'uses' => 'TransferController@refund'
+]);
+
+$router->delete('/transfer/{id}', [
+    'as' => $transfer_routes.'destroy', 'uses' => 'TransferController@destroy'
+]);
