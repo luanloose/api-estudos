@@ -2,146 +2,129 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Contracts\UserServiceContract;
+use Exception;
+use Illuminate\Http\JsonResponse;
+use Throwable;
 use Illuminate\Http\Request;
-use App\User;
-use App\Api\ApiMessages as Msg;
 
 class UserController extends Controller
 {
-    private $user;
+    private $userService;
 
-    /**
-     * Create a new user instance.
-     *
-     * @return void
-     */
-    public function __construct(User $user)
+    public function __construct(UserServiceContract $userServiceContract)
     {
-        $this->user = $user;
+        $this->userService = $userServiceContract;
     }
 
-    public function index()
-    {
-        return $this->user->with(['consumer', 'seller'])->paginate(10);
-    }
-
-    public function show($user)
+    public function index(): JsonResponse
     {
         try {
+            return response()->json($this->userService->all());
+        } catch (Exception | Throwable $e) {
+            return response()->json(
+            ['error' => $e->getMessage()],
+            JsonResponse::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
+    }
 
-            $user = $this->user->with(['consumer', 'seller'])
-                ->join('consumer', 'users.id', '=', 'consumer.user_id')
-                ->join('seller', 'users.id', '=', 'seller.user_id')
-                ->where('name', 'like', "%{$user}%")
-                ->orWhere('consumer.username', 'like', "%{$user}%")
-                ->orWhere('seller.username', 'like', "%{$user}%")->get();
+    public function store(Request $request): JsonResponse
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'cpf' => 'required|unique:users',
+            'money' => 'required',
+            'password' => 'required',
+            'type' => 'required'
+        ]);
 
+        if ($request->type != 'seller' && $request->type != 'consumer') {
+            return response()->json(
+                [
+                    'error' => 'Invalid type',
+                    'mensage' => 'Valid types [consumer, seller]'
+                ],
+                JsonResponse::HTTP_BAD_REQUEST
+            );
+        }
 
-            if ($user) {
+        try {
+            if($saved = $this->userService->save($request->all())) {
                 return response()->json(
-                    ['Usuario' => $user],
-                    200
+                    $saved,
+                    JsonResponse::HTTP_CREATED
                 );
             }
 
             return response()->json(
-                Msg::getError("Usuário nao encontrado"),
-                404
+                [
+                    'error' => 'Error on save',
+                    'mensage' => $this->userService->errors
+                ],
+                JsonResponse::HTTP_BAD_REQUEST
             );
-        } catch (\Exception $e) {
+        } catch (Exception | Throwable $e) {
             return response()->json(
-                Msg::getError("Ocorreu um erro na busca, contate o administrador"),
-                500
+                ['erro' => $e->getMessage()],
+                JsonResponse::HTTP_INTERNAL_SERVER_ERROR
             );
         }
+
     }
 
-    public function store(Request $request)
+    public function show(int $id): JsonResponse
     {
-        $this->validate($request, [
-            'user.name' => 'required',
-            'user.email' => 'required|email|unique:user',
-            'user.cpf' => 'required',
-            'user.phone' => 'required',
-            'user.money' => 'required',
-            'user.password' => 'required'
-        ]);
-        
-        $data = $request->all();
-
         try {
-
-            $user = $this->user->create($data['user']);
-
-
-            if ($request->has('consumer')) {
-                $user->consumer()->create($data['consumer']);
-            }
-
-            if ($request->has('seller')) {
-
-                $user->seller()->create($data['seller']);
-            }
-
+            return response()->json($this->userService->find($id));
+        } catch (Exception | Throwable $e) {
             return response()->json(
-                Msg::getSucess("Usuário cadastrado com sucesso!"),
-                200
-            );
-        } catch (\Exception $e) {
-            return response()->json(
-                Msg::getError("Ocorreu um erro no cadastro, contate o administrador"),
-                500
+                ['error' => $e->getMessage()],
+                JsonResponse::HTTP_INTERNAL_SERVER_ERROR
             );
         }
     }
 
-    public function update($user, Request $request)
+    public function update(Request $request, int $id ): JsonResponse 
     {
-        $data = $request->all();
-
         try {
-
-            $user = $this->user->findOrFail($user);
-            $user->update($data['user']);
-
-            if ($request->has('seller')) {
-
-                if ($user->seller == null) {
-                    $user->seller()->create($data['seller']);
-                } else {
-                    $user->seller()->update($data['seller']);
-                }
-            }
-
-            if ($request->has('consumer')) {
-                if ($user->consumer == null) {
-                    $user->consumer()->create($data['consumer']);
-                } else {
-                    $user->seller()->update($data['consumer']);
-                }
-            }
-
-            return response()->json(
-                Msg::getSucess("Usuário atualizado com sucesso!"),
-                200
+            $saved = $this->userService->update(
+                $request->all(),
+                $id
             );
-        } catch (\Exception $e) {
+
+            if($saved) {
+                return response()->json(
+                    $saved,
+                    JsonResponse::HTTP_CREATED
+                );
+            }
+
             return response()->json(
-                Msg::getError("Ocorreu um erro na atualização, contate o administrador"),
-                500
+                [
+                    'error' => 'Error on update',
+                    'mensage' => $this->userService->errors
+                ],
+                JsonResponse::HTTP_BAD_REQUEST
+            );
+        } catch (Exception | Throwable $e) {
+            return response()->json(
+                ['erro' => $e->getMessage()],
+                JsonResponse::HTTP_INTERNAL_SERVER_ERROR
             );
         }
     }
 
-    public function destroy($user)
+    public function destroy(int $id): JsonResponse
     {
-        $user = $this->user->find($user);
-
-        $user->delete();
-
-        return response()->json(
-            Msg::getSucess("Usuario foi removido com sucesso!"),
-            200
-        );
+        try {
+            return response()->json($this->userService->delete($id),200);
+        } catch (Exception | Throwable $e) {
+            return response()->json(
+                ['error' => $e->getMessage()],
+                JsonResponse::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
     }
 }

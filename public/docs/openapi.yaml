@@ -1,0 +1,413 @@
+openapi: 3.0.3
+info:
+    title: api-pagamentos
+    description: ''
+    version: 1.0.0
+servers:
+    -
+        url: 'http://localhost'
+paths:
+    /:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: 'Lumen (8.2.3) (Laravel Components ^8.0)'
+            tags:
+                - Endpoints
+            security: []
+    /user:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    current_page: 1
+                                    data: []
+                                    first_page_url: 'http://localhost/user?page=1'
+                                    from: null
+                                    last_page: 1
+                                    last_page_url: 'http://localhost/user?page=1'
+                                    links: [{ url: null, label: pagination.previous, active: false }, { url: 'http://localhost/user?page=1', label: '1', active: true }, { url: null, label: pagination.next, active: false }]
+                                    next_page_url: null
+                                    path: 'http://localhost/user'
+                                    per_page: 15
+                                    prev_page_url: null
+                                    to: null
+                                    total: 0
+                                properties:
+                                    current_page: { type: integer, example: 1 }
+                                    data: { type: array, example: [] }
+                                    first_page_url: { type: string, example: 'http://localhost/user?page=1' }
+                                    from: { type: string, example: null }
+                                    last_page: { type: integer, example: 1 }
+                                    last_page_url: { type: string, example: 'http://localhost/user?page=1' }
+                                    links: { type: array, example: [{ url: null, label: pagination.previous, active: false }, { url: 'http://localhost/user?page=1', label: '1', active: true }, { url: null, label: pagination.next, active: false }], items: { type: object } }
+                                    next_page_url: { type: string, example: null }
+                                    path: { type: string, example: 'http://localhost/user' }
+                                    per_page: { type: integer, example: 15 }
+                                    prev_page_url: { type: string, example: null }
+                                    to: { type: string, example: null }
+                                    total: { type: integer, example: 0 }
+            tags:
+                - Endpoints
+            security: []
+    '/user/{id}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                500:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Argument 1 passed to App\Http\Controllers\UserController::show() must be of the type int, string given, called in /var/www/vendor/illuminate/container/BoundMethod.php on line 36'
+                                    exception: TypeError
+                                    file: /var/www/app/Http/Controllers/UserController.php
+                                    line: 77
+                                    trace: [{ file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 36, function: show, class: App\Http\Controllers\UserController, type: '->' }, { file: /var/www/vendor/illuminate/container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/Container.php, line: 614, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 386, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 352, function: callControllerCallable, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 326, function: callLumenController, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 279, function: callControllerAction, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 264, function: callActionOnArrayBasedRoute, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 234, function: handleFoundRoute, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 170, function: handleDispatcherResponse, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 426, function: 'Laravel\Lumen\Concerns\{closure}', class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 172, function: sendThroughPipeline, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 92, function: dispatch, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 333, function: handle, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 36, function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/vendor/illuminate/container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/Container.php, line: 614, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/vendor/symfony/console/Command/Command.php, line: 256, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/vendor/illuminate/console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 971, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 290, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 166, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/illuminate/console/Application.php, line: 92, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php, line: 116, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /var/www/artisan, line: 35, function: handle, class: Laravel\Lumen\Console\Kernel, type: '->' }]
+                                properties:
+                                    message: { type: string, example: 'Argument 1 passed to App\Http\Controllers\UserController::show() must be of the type int, string given, called in /var/www/vendor/illuminate/container/BoundMethod.php on line 36' }
+                                    exception: { type: string, example: TypeError }
+                                    file: { type: string, example: /var/www/app/Http/Controllers/UserController.php }
+                                    line: { type: integer, example: 77 }
+                                    trace: { type: array, example: [{ file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 36, function: show, class: App\Http\Controllers\UserController, type: '->' }, { file: /var/www/vendor/illuminate/container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/Container.php, line: 614, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 386, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 352, function: callControllerCallable, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 326, function: callLumenController, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 279, function: callControllerAction, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 264, function: callActionOnArrayBasedRoute, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 234, function: handleFoundRoute, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 170, function: handleDispatcherResponse, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 426, function: 'Laravel\Lumen\Concerns\{closure}', class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 172, function: sendThroughPipeline, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 92, function: dispatch, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 333, function: handle, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 36, function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/vendor/illuminate/container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/Container.php, line: 614, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/vendor/symfony/console/Command/Command.php, line: 256, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/vendor/illuminate/console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 971, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 290, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 166, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/illuminate/console/Application.php, line: 92, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php, line: 116, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /var/www/artisan, line: 35, function: handle, class: Laravel\Lumen\Console\Kernel, type: '->' }], items: { type: object } }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        delete:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: soluta
+                required: true
+                schema:
+                    type: string
+    /transfer:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    current_page: 1
+                                    data: []
+                                    first_page_url: 'http://localhost/transfer?page=1'
+                                    from: null
+                                    last_page: 1
+                                    last_page_url: 'http://localhost/transfer?page=1'
+                                    links: [{ url: null, label: pagination.previous, active: false }, { url: 'http://localhost/transfer?page=1', label: '1', active: true }, { url: null, label: pagination.next, active: false }]
+                                    next_page_url: null
+                                    path: 'http://localhost/transfer'
+                                    per_page: 15
+                                    prev_page_url: null
+                                    to: null
+                                    total: 0
+                                properties:
+                                    current_page: { type: integer, example: 1 }
+                                    data: { type: array, example: [] }
+                                    first_page_url: { type: string, example: 'http://localhost/transfer?page=1' }
+                                    from: { type: string, example: null }
+                                    last_page: { type: integer, example: 1 }
+                                    last_page_url: { type: string, example: 'http://localhost/transfer?page=1' }
+                                    links: { type: array, example: [{ url: null, label: pagination.previous, active: false }, { url: 'http://localhost/transfer?page=1', label: '1', active: true }, { url: null, label: pagination.next, active: false }], items: { type: object } }
+                                    next_page_url: { type: string, example: null }
+                                    path: { type: string, example: 'http://localhost/transfer' }
+                                    per_page: { type: integer, example: 15 }
+                                    prev_page_url: { type: string, example: null }
+                                    to: { type: string, example: null }
+                                    total: { type: integer, example: 0 }
+            tags:
+                - Endpoints
+            security: []
+    '/transfer/{id}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                500:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Argument 1 passed to App\Http\Controllers\TransferController::show() must be of the type int, string given, called in /var/www/vendor/illuminate/container/BoundMethod.php on line 36'
+                                    exception: TypeError
+                                    file: /var/www/app/Http/Controllers/TransferController.php
+                                    line: 121
+                                    trace: [{ file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 36, function: show, class: App\Http\Controllers\TransferController, type: '->' }, { file: /var/www/vendor/illuminate/container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/Container.php, line: 614, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 386, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 352, function: callControllerCallable, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 326, function: callLumenController, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 279, function: callControllerAction, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 264, function: callActionOnArrayBasedRoute, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 234, function: handleFoundRoute, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 170, function: handleDispatcherResponse, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 426, function: 'Laravel\Lumen\Concerns\{closure}', class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 172, function: sendThroughPipeline, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 92, function: dispatch, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 333, function: handle, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 36, function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/vendor/illuminate/container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/Container.php, line: 614, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/vendor/symfony/console/Command/Command.php, line: 256, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/vendor/illuminate/console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 971, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 290, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 166, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/illuminate/console/Application.php, line: 92, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php, line: 116, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /var/www/artisan, line: 35, function: handle, class: Laravel\Lumen\Console\Kernel, type: '->' }]
+                                properties:
+                                    message: { type: string, example: 'Argument 1 passed to App\Http\Controllers\TransferController::show() must be of the type int, string given, called in /var/www/vendor/illuminate/container/BoundMethod.php on line 36' }
+                                    exception: { type: string, example: TypeError }
+                                    file: { type: string, example: /var/www/app/Http/Controllers/TransferController.php }
+                                    line: { type: integer, example: 121 }
+                                    trace: { type: array, example: [{ file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 36, function: show, class: App\Http\Controllers\TransferController, type: '->' }, { file: /var/www/vendor/illuminate/container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/Container.php, line: 614, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 386, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 352, function: callControllerCallable, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 326, function: callLumenController, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 279, function: callControllerAction, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 264, function: callActionOnArrayBasedRoute, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 234, function: handleFoundRoute, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 170, function: handleDispatcherResponse, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 426, function: 'Laravel\Lumen\Concerns\{closure}', class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 172, function: sendThroughPipeline, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 92, function: dispatch, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 333, function: handle, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 36, function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/vendor/illuminate/container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/Container.php, line: 614, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/vendor/symfony/console/Command/Command.php, line: 256, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/vendor/illuminate/console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 971, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 290, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 166, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/illuminate/console/Application.php, line: 92, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php, line: 116, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /var/www/artisan, line: 35, function: handle, class: Laravel\Lumen\Console\Kernel, type: '->' }], items: { type: object } }
+            tags:
+                - Endpoints
+            security: []
+        delete:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: ut
+                required: true
+                schema:
+                    type: string
+    '/transfer/refund/{id}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                500:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Argument 1 passed to App\Http\Controllers\TransferController::refund() must be of the type int, string given, called in /var/www/vendor/illuminate/container/BoundMethod.php on line 36'
+                                    exception: TypeError
+                                    file: /var/www/app/Http/Controllers/TransferController.php
+                                    line: 133
+                                    trace: [{ file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 36, function: refund, class: App\Http\Controllers\TransferController, type: '->' }, { file: /var/www/vendor/illuminate/container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/Container.php, line: 614, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 386, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 352, function: callControllerCallable, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 326, function: callLumenController, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 279, function: callControllerAction, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 264, function: callActionOnArrayBasedRoute, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 234, function: handleFoundRoute, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 170, function: handleDispatcherResponse, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 426, function: 'Laravel\Lumen\Concerns\{closure}', class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 172, function: sendThroughPipeline, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 92, function: dispatch, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 333, function: handle, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 36, function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/vendor/illuminate/container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/Container.php, line: 614, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/vendor/symfony/console/Command/Command.php, line: 256, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/vendor/illuminate/console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 971, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 290, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 166, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/illuminate/console/Application.php, line: 92, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php, line: 116, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /var/www/artisan, line: 35, function: handle, class: Laravel\Lumen\Console\Kernel, type: '->' }]
+                                properties:
+                                    message: { type: string, example: 'Argument 1 passed to App\Http\Controllers\TransferController::refund() must be of the type int, string given, called in /var/www/vendor/illuminate/container/BoundMethod.php on line 36' }
+                                    exception: { type: string, example: TypeError }
+                                    file: { type: string, example: /var/www/app/Http/Controllers/TransferController.php }
+                                    line: { type: integer, example: 133 }
+                                    trace: { type: array, example: [{ file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 36, function: refund, class: App\Http\Controllers\TransferController, type: '->' }, { file: /var/www/vendor/illuminate/container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/Container.php, line: 614, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 386, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 352, function: callControllerCallable, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 326, function: callLumenController, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 279, function: callControllerAction, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 264, function: callActionOnArrayBasedRoute, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 234, function: handleFoundRoute, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 170, function: handleDispatcherResponse, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 426, function: 'Laravel\Lumen\Concerns\{closure}', class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 172, function: sendThroughPipeline, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php, line: 92, function: dispatch, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 333, function: handle, class: Laravel\Lumen\Application, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php, line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Extracting/Generator.php, line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: /var/www/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php, line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 36, function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: /var/www/vendor/illuminate/container/Util.php, line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: /var/www/vendor/illuminate/container/BoundMethod.php, line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/container/Container.php, line: 614, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: /var/www/vendor/illuminate/console/Command.php, line: 136, function: call, class: Illuminate\Container\Container, type: '->' }, { file: /var/www/vendor/symfony/console/Command/Command.php, line: 256, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/vendor/illuminate/console/Command.php, line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 971, function: run, class: Illuminate\Console\Command, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 290, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/symfony/console/Application.php, line: 166, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/illuminate/console/Application.php, line: 92, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php, line: 116, function: run, class: Illuminate\Console\Application, type: '->' }, { file: /var/www/artisan, line: 35, function: handle, class: Laravel\Lumen\Console\Kernel, type: '->' }], items: { type: object } }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: expedita
+                required: true
+                schema:
+                    type: string
