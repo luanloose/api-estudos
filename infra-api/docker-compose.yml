@@ -1,4 +1,5 @@
 nginx:
+  container_name: api-pagamentos-nginx
   build: nginx
   command: nginx -g "daemon off;"
   links:
@@ -6,6 +7,7 @@ nginx:
   ports:
     - "8181:80"
 php:
+  container_name: api-pagamentos-back-end
   build: php
   volumes:
     - ../:/var/www
@@ -29,6 +31,7 @@ php:
   extra_hosts:
     docker.for.wsl2.host.internal: ${IP}
 db:
+  container_name: api-pagamentos-bd
   image: mysql
   ports:
     - "3306:3306"

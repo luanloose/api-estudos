@@ -22,4 +22,4 @@ Api de pagamentos
 
 ### Documentação
 
-1. Após subir o projeto acesse `EM CONSTRUÇÃO`
+1. [Link](https://documenter.getpostman.com/view/14149795/TzRa8Q7q)
